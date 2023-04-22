@@ -79,11 +79,17 @@ mod tests {
         let input = String::from("III");
         let result = Solution::roman_to_int(input);
         assert_eq!(result, 3);
+    }
 
+    #[test]
+    fn example_2() {
         let input = String::from("LVIII");
         let result = Solution::roman_to_int(input);
         assert_eq!(result, 58);
+    }
 
+    #[test]
+    fn example_3() {
         let input = String::from("MCMXCIV");
         let result = Solution::roman_to_int(input);
         assert_eq!(result, 1994);
