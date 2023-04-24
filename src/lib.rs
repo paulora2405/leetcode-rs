@@ -1,5 +1,6 @@
 #![allow(unused)]
 
+pub mod design_browser_history;
 pub mod generate_parentheses;
 pub mod integer_to_roman;
 pub mod merge_k_sorted_lists;
