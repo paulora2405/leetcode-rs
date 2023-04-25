@@ -1,5 +1,6 @@
 #![allow(unused)]
 
+pub mod _24_game;
 pub mod design_browser_history;
 pub mod generate_parentheses;
 pub mod integer_to_roman;
