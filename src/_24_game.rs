@@ -36,18 +36,17 @@ impl Solution {
 }
 
 fn has_reached_result(cards: &[f32]) -> bool {
-    let len = cards.len();
-    if len == 1 {
+    if cards.len() == 1 {
         return (cards[0] - 24.0).abs() <= 0.1;
     }
-    for i in 0..len {
-        for j in (i + 1)..len {
+    for i in 0..cards.len() {
+        for j in (i + 1)..cards.len() {
             let mut new_cards = Vec::with_capacity(4);
-            for k in (0..len) {
+            (0..cards.len()).for_each(|k| {
                 if k != i && k != j {
                     new_cards.push(cards[k]);
                 }
-            }
+            });
             for res in generate_possible_results(cards[i], cards[j]) {
                 new_cards.push(res);
                 if has_reached_result(&new_cards) {
@@ -57,7 +56,7 @@ fn has_reached_result(cards: &[f32]) -> bool {
             }
         }
     }
-    return false;
+    false
 }
 
 fn generate_possible_results(a: f32, b: f32) -> Vec<f32> {
